@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1622212226983.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3224988604",
+    "id" : "E850649A",
+    "lastKnownWriteTime" : 1622212702,
+    "last_content_update" : 1622213806843,
+    "path" : "C:/Users/ma_za/Dropbox/R/flexdashboard-exemplo/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "cursorPosition" : "18,0",
+        "scrollLine" : "14",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

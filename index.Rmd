@@ -1,0 +1,189 @@
+---
+title: "R-Ladies SP - 05/12/20"
+encoding: "UTF-8"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    theme: lumen
+runtime: shiny
+---
+echo "# flexdashboard_exemplo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/marina-muradian/flexdashboard_exemplo.git
+git push -u origin main
+
+```{r setup, include=FALSE, fig.align = 'center'}
+knitr::opts_chunk$set(echo = FALSE, fig.cap = TRUE)
+
+# Pacotes---------------------------------------------------
+
+library(flexdashboard)
+library(plotly)
+library(tidyverse)
+library(skimr)
+#library(inspectdf)
+library(ggrepel)
+library(ggthemes)
+library(grid)
+library(lubridate)
+library(grid)
+#library(plotly)
+#library(RcppRoll)
+library(extrafont)
+library(factoextra)
+#library(dendextend)
+library(knitr)
+library(shiny)
+
+# Identidade visual---------------------------------------------------
+
+#font_import()
+#fonts()
+
+theme_set(theme_minimal())
+theme_update(text = element_text(family = "Trebuchet MS"),
+             plot.title = element_text(face = "bold"))
+
+options(pillar.sigfig = 1)
+```
+
+
+Intro 
+=========================================
+Row
+-----------------------------------------------------------------------
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("intro.png")
+
+```
+About me 
+=========================================
+Row
+-----------------------------------------------------------------------
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("aboutme.png")
+
+```
+Interagindo!
+=========================================
+Row
+-----------------------------------------------------------------------
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("mentimeter.png")
+
+```
+
+why Shiny? 
+=========================================
+Row
+-----------------------------------------------------------------------
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("pqshiny.png")
+
+```
+
+Basics
+=========================================
+Row {.tabset}
+-----------------------------------------------------------------------
+### Basics
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("basics.png")
+```
+
+### Inputs
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("inputs.png")
+```
+
+### Outputs
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("outputs.png")
+```
+
+
+### Server
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("server.png")
+```
+
+1st App
+=====================================  
+
+Parâmetros {.sidebar}
+-----------------------------------------------------------------------
+
+```{r echo = FALSE}
+
+textInput(inputId = "name", 
+            label = "Qual seu nome?")
+
+sliderInput(inputId = "feedback", 
+              label ="O que achou da palestra?",
+              min = 0,
+              max = 10,
+              value = 5)
+```
+
+Row 
+-----------------------------------------------------------------------
+
+```{r echo=FALSE}
+
+textOutput(outputId = "texto1")
+
+```
+
+```{r warning=FALSE, context="server"}
+
+  output$texto1 <- renderText({
+    paste0("Obrigada pelo feedback, ",input$name,"!")
+    })
+
+```
+
+Aplicações
+=====================================  
+Row {.tabset}
+-----------------------------------------------------------------------
+### shinydashboard
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("shinydash.png")
+```
+
+### flexdashboard
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("flexdash.png")
+```
+
+Finale!
+=====================================  
+Row 
+-----------------------------------------------------------------------
+
+```{r out.width = "87%", fig.align = "center"}
+
+include_graphics("tks.png")
+
+```
